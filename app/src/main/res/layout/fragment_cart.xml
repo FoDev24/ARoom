@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_cart"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="16dp">
+
+                <ImageView
+                    android:id="@+id/img_close_cart"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_close"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="@string/g_my_cart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_20ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/img_close_cart"
+                    app:layout_constraintStart_toEndOf="@id/img_close_cart"
+                    app:layout_constraintTop_toTopOf="@id/img_close_cart" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.68" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toTopOf="@id/bottom_guideline"
+            app:layout_constraintEnd_toEndOf="@id/right_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/progress_bar_cart"
+            tools:listitem="@layout/cart_product_item" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progress_bar_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_cart" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/total_box_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/total_box_background"
+            app:layout_constraintBottom_toTopOf="@+id/left_guideline"
+            app:layout_constraintEnd_toEndOf="@id/right_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/bottom_guideline">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="Total"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_total_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sf_pro_display"
+                android:text="LE 1250"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/btn_checkout_cart"
+            style="@style/blueButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/medium_button_height"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="20dp"
+            android:text="Check out"
+            app:layout_constraintEnd_toEndOf="@id/right_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/total_box_container"
+            app:spinning_bar_color="@color/white" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_empty_cart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:id="@+id/img_empty_box_texture"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:src="@drawable/ic_empty_box_texture"
+                app:layout_constraintBottom_toBottomOf="@id/img_empty_box"
+                app:layout_constraintEnd_toEndOf="@id/img_empty_box"
+                app:layout_constraintStart_toStartOf="@id/img_empty_box"
+                app:layout_constraintTop_toTopOf="@id/img_empty_box" />
+
+            <ImageView
+                android:id="@+id/img_empty_box"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="130dp"
+                android:background="@drawable/empty_box_background"
+                android:src="@drawable/ic_empty_box"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_empty_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center"
+                android:text="Your shopping cart is empty"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@id/img_empty_box_texture"
+                app:layout_constraintStart_toStartOf="@id/img_empty_box_texture"
+                app:layout_constraintTop_toBottomOf="@id/img_empty_box_texture" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

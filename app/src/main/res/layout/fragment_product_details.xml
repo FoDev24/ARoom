@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true">
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_product_img"
+            android:layout_width="0dp"
+            android:layout_height="358dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardElevation="0dp" >
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager_product_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+
+            <ImageView
+                android:id="@+id/img_close"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_close"
+                android:padding="5dp"
+                app:tint="@color/g_black" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabBackground="@drawable/tab_indicator"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/linear_name_price"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/ar_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ar_2"
+            app:civ_border_color="@color/white"
+            android:backgroundTint="@color/white"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            app:civ_border_width="0.8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/linear_name_price"
+            android:layout_marginBottom="40dp"
+            app:backgroundTint="@color/g_gray500"
+            app:elevation="10dp"
+           />
+
+
+        <LinearLayout
+            android:id="@+id/linear_name_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_product_img">
+
+            <TextView
+                android:id="@+id/tv_product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/h3"
+                android:text="Any Text"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tv_product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/h3"
+                android:text="LE 600"
+                android:textColor="@color/g_gray700" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_product_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/h3"
+            android:text="Quality Material Premium PU leather (skin-friendly and clean easily), high-density thicker sponge (high resilience and more comfortable), Mute PU wheel (protect the wooden floors from being scratched)."
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:padding="1dp"
+            android:maxWidth="350dp"
+            android:textColor="@color/g_gray700"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintStart_toStartOf="@id/linear_name_price"
+            app:layout_constraintTop_toBottomOf="@id/linear_name_price" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/g_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_product_description"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" />
+
+        <LinearLayout
+            android:id="@+id/linear_color_sizes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/line"
+            app:layout_constraintStart_toStartOf="@id/line"
+            app:layout_constraintTop_toBottomOf="@id/line"
+            android:layout_marginTop="30dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_product_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/h3"
+                    android:text="Color"
+                    android:textColor="@color/black" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_product_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/h3"
+                    android:text="Size"
+                    android:textColor="@color/black" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_sizes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/btn_add_to_cart"
+            style="@style/blueButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/medium_button_height"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="20dp"
+            android:text="Add to cart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/linear_color_sizes"
+            app:layout_constraintStart_toStartOf="@id/linear_color_sizes"
+            app:layout_constraintTop_toBottomOf="@id/linear_color_sizes"
+            app:spinning_bar_color="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

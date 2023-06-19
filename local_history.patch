@@ -1,0 +1,104 @@
+Index: app/src/main/res/layout/fragment_product_details.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_product_details.xml b/app/src/main/res/layout/fragment_product_details.xml
+--- a/app/src/main/res/layout/fragment_product_details.xml	
++++ b/app/src/main/res/layout/fragment_product_details.xml	(date 1685927466726)
+@@ -27,16 +27,35 @@
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"/>
+             
+-            <ImageView
+-                android:id="@+id/img_close"
+-                android:layout_width="40dp"
+-                android:layout_height="40dp"
+-                android:src="@drawable/ic_close"
+-                android:padding="5dp"
+-                app:tint="@color/g_black" />
++            <LinearLayout
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:orientation="horizontal">
++                
++                <ImageView
++                    android:id="@+id/img_close"
++                    android:layout_width="40dp"
++                    android:layout_height="40dp"
++                    android:src="@drawable/ic_close"
++                    android:padding="5dp"
++                    app:tint="@color/g_black" />
++                
++                <de.hdodenhof.circleimageview.CircleImageView
++                    android:id="@+id/vr_icon"
++                    android:layout_width="60dp"
++                    android:layout_height="60dp"
++                    android:layout_marginLeft="280dp"
++                    android:src="@drawable/vr_2glasses"
++                    app:civ_border_color="@color/g_blue100"
++                    app:civ_border_width="2dp" />
++                
++            </LinearLayout>
++        
+ 
++           
+ 
+ 
++
+         </androidx.cardview.widget.CardView>
+ 
+ 
+@@ -151,30 +170,17 @@
+         <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+             android:id="@+id/btn_add_to_cart"
+             style="@style/blueButtonStyle"
+-            android:layout_width="150dp"
++            android:layout_width="0dp"
+             android:layout_height="@dimen/medium_button_height"
+             android:layout_marginTop="45dp"
+             android:layout_marginBottom="20dp"
+             android:text="Add to cart"
+             app:layout_constraintBottom_toBottomOf="parent"
++            app:layout_constraintEnd_toEndOf="@id/linear_color_sizes"
+             app:layout_constraintStart_toStartOf="@id/linear_color_sizes"
+             app:layout_constraintTop_toBottomOf="@id/linear_color_sizes"
+             app:spinning_bar_color="@color/white" />
+ 
+-        <de.hdodenhof.circleimageview.CircleImageView
+-            android:id="@+id/profile_image"
+-            android:layout_width="70dp"
+-            android:layout_height="70dp"
+-            android:src="@drawable/vr_glasses"
+-            app:civ_border_color="@color/g_blue100"
+-            app:civ_border_width="2dp"
+-            app:layout_constraintBottom_toBottomOf="parent"
+-            app:layout_constraintEnd_toEndOf="@id/linear_color_sizes"
+-            app:layout_constraintHorizontal_bias="0.818"
+-            app:layout_constraintStart_toStartOf="@id/linear_color_sizes"
+-            app:layout_constraintTop_toBottomOf="@id/linear_color_sizes"
+-            app:layout_constraintVertical_bias="0.6" />
+-
+     </androidx.constraintlayout.widget.ConstraintLayout>
+ 
+ </androidx.core.widget.NestedScrollView>
+\ No newline at end of file
+Index: app/src/main/java/com/example/fragments/shopping/ProductDetailsFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/fragments/shopping/ProductDetailsFragment.kt b/app/src/main/java/com/example/fragments/shopping/ProductDetailsFragment.kt
+--- a/app/src/main/java/com/example/fragments/shopping/ProductDetailsFragment.kt	
++++ b/app/src/main/java/com/example/fragments/shopping/ProductDetailsFragment.kt	(date 1685840420241)
+@@ -56,6 +56,10 @@
+             imgClose.setOnClickListener {
+                 findNavController().navigateUp()
+             }
++            
++            vrIcon.setOnClickListener { 
++                
++            }
+ 
+             if(product.colors.isNullOrEmpty()){
+                 tvProductColor.visibility = View.INVISIBLE

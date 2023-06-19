@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/home_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/search_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/search_box_background">
+
+            <EditText
+                android:id="@+id/ed_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/white_background"
+                android:fontFamily="@font/poppins_thin"
+                android:gravity="start"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:singleLine="true"
+                android:textColorHint="#919394"
+                android:hint="Search"
+                android:imeOptions="actionSearch"
+                android:inputType="textCapWords"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+            <ImageView
+                android:id="@+id/search_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_search"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_scan"
+            android:background="@drawable/icon_background"
+            android:backgroundTint="@color/g_search_and_icons"
+            android:padding="10dp" />
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_microphone"
+            android:background="@drawable/icon_background"
+            android:backgroundTint="@color/g_search_and_icons"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_rv"
+        android:layout_width="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/home_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/product_rv_item"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:spanCount="2"/>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_bar_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_header" />
+    <TextView
+        android:id="@+id/tv_empty_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_light"
+        android:gravity="center"
+        android:text="Empty search"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

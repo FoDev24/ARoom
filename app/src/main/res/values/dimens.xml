@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tv_right_addres_for_shopping">10dp</dimen>
+    <dimen name="small_button_width">130dp</dimen>
+    <dimen name="small_button_height">55dp</dimen>
+    <dimen name="buttonCorners">5dp</dimen>
+    <dimen name="medium_button_width">200dp</dimen>
+    <dimen name="medium_button_height">55dp</dimen>
+    <dimen name="edit_text_height">60dp</dimen>
+    <dimen name="_20sdp">20dp</dimen>
+    <dimen name="_20ssp">20sp</dimen>
+</resources>

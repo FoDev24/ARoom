@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarUserAccount"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imageCloseUserAccount"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_close"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="My account"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@id/imageCloseUserAccount"
+                    app:layout_constraintStart_toStartOf="@id/imageCloseUserAccount"
+                    app:layout_constraintTop_toTopOf="@id/imageCloseUserAccount" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <ProgressBar
+            android:id="@+id/progressbarAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageUser"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_marginTop="24dp"
+            android:src="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarUserAccount" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageEdit"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/settings_items_background"
+            android:backgroundTint="#5E85F9"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintBottom_toBottomOf="@id/imageUser"
+            app:layout_constraintEnd_toEndOf="@id/imageUser" />
+
+
+        <EditText
+            android:id="@+id/edFirstName"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/white_background"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:hint="First Name"
+            android:singleLine="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/imageUser" />
+
+        <EditText
+            android:id="@+id/edLastName"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/white_background"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:hint="Last Name"
+            android:singleLine="true"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@id/edFirstName" />
+
+        <EditText
+            android:id="@+id/edEmail"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/white_background"
+            android:editable="false"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:hint="Email"
+            android:singleLine="true"
+            android:textColor="@color/g_gray700"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@id/edLastName" />
+
+        <TextView
+            android:id="@+id/tvUpdatePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Forgot/Change password"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/edEmail" />
+
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+            android:id="@+id/buttonSave"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:background="@drawable/blue_background"
+            android:fontFamily="@font/poppins_light"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/rightGuideline"
+            app:layout_constraintStart_toStartOf="@id/leftGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/tvUpdatePassword"
+            android:layout_marginBottom="20dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

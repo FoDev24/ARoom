@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <!-- Always needed for AR. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Needed to load gltf from network. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.camera.ar"
+        android:required="true" />
+
+
+    <application
+        android:name="com.example.ARoomApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.ARoom"
+        tools:targetApi="31" >
+
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
+
+        <activity
+            android:name="com.example.activities.LoginRegisterActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.activities.ShoppingActivity"
+            android:exported="true" />
+
+
+    </application>
+
+</manifest>

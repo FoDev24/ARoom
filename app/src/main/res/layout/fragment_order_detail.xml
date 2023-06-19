@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarOrderDetails"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageCloseOrder"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_close"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvOrderId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:text="#1234567"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageCloseOrder"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <LinearLayout
+            android:id="@+id/linearStepView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintTop_toBottomOf="@id/toolbarOrderDetails">
+
+            <com.shuhart.stepview.StepView
+                android:id="@+id/stepView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                app:sv_selectedCircleColor="@color/g_orange_yellow"
+                app:sv_selectedTextColor="@color/g_gray700"
+                app:sv_stepLineWidth="3dp"
+                app:sv_stepPadding="4dp"
+                app:sv_nextTextColor="@color/g_gray700"
+                app:sv_nextStepLineColor="@color/g_gray700"
+                app:sv_doneCircleColor="@color/g_orange_yellow"
+                app:sv_doneStepLineColor="@color/g_orange_yellow"
+                app:sv_doneCircleRadius="14dp"
+                app:sv_selectedCircleRadius="14dp"
+                app:sv_selectedStepNumberColor="@color/g_blue_gray200"
+                app:sv_stepViewStyle="@style/StepView"
+                app:sv_doneStepMarkColor="@color/g_blue_gray200"
+                app:sv_stepNumberTextSize="12sp"
+                app:sv_animationType="Line"
+                app:sv_doneTextColor="@color/g_gray700"
+                />
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/tvShippingAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:fontFamily="@font/poppins_thin"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/linearStepView"
+            app:drawableTint="@color/black"
+            app:drawableLeftCompat="@drawable/ic_location" />
+
+        <LinearLayout
+            android:id="@+id/linearAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/tvShippingAddress">
+
+
+            <TextView
+                android:id="@+id/tvFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Full Name"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tvPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="0dp"
+            android:layout_height="1sp"
+            android:layout_marginTop="15dp"
+            android:background="@color/g_blue_gray200"
+            app:layout_constraintTop_toBottomOf="@id/linearAddress"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            android:backgroundTint="@color/g_blue_gray200"
+            />
+
+        <TextView
+            android:id="@+id/tvProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Products"
+            android:fontFamily="@font/poppins_thin"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/line1"
+            app:drawableTint="@color/black"
+            app:drawableLeftCompat="@drawable/ic_cart"
+            android:drawablePadding="5dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProducts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/line1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/tvProducts"
+            android:layout_marginTop="10dp"
+            tools:listitem="@layout/billing_products_rv_item"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/rvProducts"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/total_box_background">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sf_pro_display"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:layout_marginTop="15sp"
+                android:layout_marginBottom="15sp"
+                android:layout_gravity="start|center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/sf_pro_display"
+                android:layout_marginTop="16sp"
+                android:layout_marginBottom="16sp"
+                android:layout_gravity="end|center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
