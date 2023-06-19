@@ -10,26 +10,25 @@ Download link : https://www.mediafire.com/file/qlx6xr8jnrr4fkq/ARoom.rar/file
 
 # Technologies
 
-•	SceneForm : is an ARCore Android SDK with Google Filament as a 3D engine.
+• SceneForm: is an ARCore Android SDK with Google Filament as a 3D engine.
 
-•	Hilt : for dependency injection, ensuring clean and modular code.
+• Hilt: for dependency injection, ensuring clean and modular code.
 
-•	Coroutines : to handle firebase requests in the background.
+• Coroutines: to handle Firebase requests in the background.
 
-•	MVVM & StateFlow: Saperate logic code from views and save the state in case the screen configuration changes.
+• MVVM & StateFlow: Separate logic code from views and save the state in case the screen configuration changes.
 
-•	Navigation component : One activity contains multiple fragments instead of creating multiple activites.
+• Navigation component: One activity contains multiple fragments instead of creating multiple activities.
 
-•	Firebase Auth : Manging Accounts/ Loging in and Registrations.
+• Firebase Auth: Manging Accounts/ Loging in and registrations
 
-•	Firebase Firestore : Database for the system.
+• Firebase Firestore: Database for the System
 
-•	Firebase Storage : To store proucts ,images, user profile pictures and 3D models .
+• Firebase Storage: To store products, images, user profile pictures, and 3D models
 
-•	View binding : instead of inflating views manually view binding will take care of that.
+• View binding: instead of inflating views manually, view binding will take care of that.
 
-•	Glide : Load images to an imageVIew.
-
+• Glide: Load images to an imageVIew.
 
 
 
